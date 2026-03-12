@@ -23,7 +23,8 @@ docker compose up -d --build
 
 По умолчанию:
 
-- `PORT=8081`
+- `HOST_PORT=8081`
+- `PORT=8080`
 - `BACKEND_UPSTREAM=http://host.docker.internal:3000`
 - `API_BASE_URL=/api`
 
@@ -31,7 +32,7 @@ docker compose up -d --build
 
 ```bash
 docker build -t rendycrm-fr .
-docker run --rm -p 8081:80 \
+docker run --rm -p 8081:8080 \
   -e BACKEND_UPSTREAM=https://your-backend.example.com \
   -e API_BASE_URL=/api \
   rendycrm-fr
