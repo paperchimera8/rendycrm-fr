@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Rendy CRM</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="card">
+        <h1>Rendy CRM</h1>
+        <p class="muted">Минимальный фронтенд для отдельного деплоя.</p>
+
+        <div class="field">
+          <label for="apiUrl">Backend URL</label>
+          <input id="apiUrl" placeholder="https://your-backend.example.com" />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" placeholder="operator@rendycrm.local" />
+        </div>
+
+        <div class="field">
+          <label for="password">Пароль</label>
+          <input id="password" type="password" placeholder="password" />
+        </div>
+
+        <div class="row">
+          <button id="loginBtn">Войти</button>
+          <button id="logoutBtn" class="ghost">Выйти</button>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <button id="healthBtn">Проверить /health</button>
+          <button id="meBtn" class="ghost">Проверить /auth/me</button>
+        </div>
+
+        <hr />
+
+        <h2>Webhook test</h2>
+        <div class="field">
+          <label for="operatorSecret">Operator secret (header)</label>
+          <input id="operatorSecret" placeholder="operator-secret" />
+        </div>
+        <button id="operatorWebhookBtn">Тест /webhooks/telegram/operator</button>
+
+        <pre id="output">Готово.</pre>
+      </section>
+    </main>
+
+    <script src="/config.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
+
