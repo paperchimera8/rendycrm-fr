@@ -6,20 +6,25 @@
 
 ## Настройка
 
-Открой `config.js` и укажи `API_BASE_URL`:
+`API_BASE_URL` подставляется при старте контейнера из переменной окружения.
 
-```js
-window.RUNTIME_CONFIG = {
-  API_BASE_URL: "https://your-backend.example.com"
-}
+Можно оставить пустым и вводить backend URL прямо в форме (сохранится в localStorage).
+
+## Docker Compose
+
+```bash
+cp .env.example .env
+docker compose up -d --build
 ```
 
-Можно не указывать, тогда URL backend задается в форме и сохраняется в localStorage.
+По умолчанию:
 
-## Docker
+- `PORT=8081`
+- `API_BASE_URL=http://localhost:3000`
+
+## Docker (без compose)
 
 ```bash
 docker build -t rendycrm-fr .
-docker run --rm -p 8081:80 rendycrm-fr
+docker run --rm -p 8081:80 -e API_BASE_URL=https://your-backend.example.com rendycrm-fr
 ```
-
