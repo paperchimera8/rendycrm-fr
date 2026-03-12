@@ -25,7 +25,7 @@ docker compose up -d --build
 
 - `HOST_PORT=8081`
 - `PORT=8080`
-- `BACKEND_URL=https://paperchimera8-rendycrm-bk-6e11.twc1.net`
+- `BACKEND_URL=https://rendycrm-bk-production-0739.up.railway.app`
 - `API_BASE_URL=/api`
 
 ## Docker (без compose)
