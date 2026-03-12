@@ -1,6 +1,6 @@
 FROM nginx:1.27-alpine
 ENV PORT=8080
-ENV BACKEND_URL=https://rendycrm-bk-production-0739.up.railway.app
+ENV BACKEND_URL=http://rendycrm-bk.railway.internal:3000
 ENV NGINX_ENTRYPOINT_WORKER_PROCESSES_AUTOTUNE=
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx.conf.template /etc/nginx/templates/default.conf.template
