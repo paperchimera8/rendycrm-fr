@@ -4,6 +4,7 @@ ENV BACKEND_URL=https://rendycrm-bk-production-0739.up.railway.app
 ENV NGINX_ENTRYPOINT_WORKER_PROCESSES_AUTOTUNE=
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx.conf.template /etc/nginx/templates/default.conf.template
+RUN cat /etc/nginx/templates/default.conf.template
 COPY index.html /usr/share/nginx/html/index.html
 COPY styles.css /usr/share/nginx/html/styles.css
 COPY app.js /usr/share/nginx/html/app.js
