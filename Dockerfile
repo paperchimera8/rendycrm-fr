@@ -7,6 +7,7 @@ COPY nginx.conf.template /etc/nginx/templates/default.conf.template
 RUN cat /etc/nginx/templates/default.conf.template
 RUN /docker-entrypoint.d/20-envsubst-on-templates.sh && cat /etc/nginx/conf.d/default.conf
 COPY index.html /usr/share/nginx/html/index.html
+COPY 50x.html /usr/share/nginx/html/50x.html
 COPY styles.css /usr/share/nginx/html/styles.css
 COPY app.js /usr/share/nginx/html/app.js
 COPY config.js /usr/share/nginx/html/config.js

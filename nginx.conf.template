@@ -3,6 +3,8 @@ server {
   server_name _;
   root /usr/share/nginx/html;
   index index.html;
+  error_log /var/log/nginx/error.log debug;
+  access_log /var/log/nginx/access.log;
 
   location = /health {
     default_type application/json;
@@ -22,6 +24,17 @@ server {
     proxy_set_header X-Forwarded-Proto $scheme;
     proxy_set_header X-Forwarded-Host $host;
     proxy_pass http://rendycrm-bk.railway.internal:8080/;
+    proxy_intercept_errors on;
+    error_page 502 503 504 /50x.html;
+  }
+
+  location /debug-dns {
+    default_type text/plain;
+    return 200 "Testing DNS resolution";
+  }
+
+  location = /50x.html {
+    internal;
   }
 
   location / {
