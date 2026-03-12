@@ -1,6 +1,6 @@
 FROM nginx:1.27-alpine
 ENV PORT=8080
-ENV BACKEND_UPSTREAM=http://localhost:3000
+ENV BACKEND_URL=http://localhost:3000
 COPY nginx.conf.template /etc/nginx/templates/default.conf.template
 COPY index.html /usr/share/nginx/html/index.html
 COPY styles.css /usr/share/nginx/html/styles.css
