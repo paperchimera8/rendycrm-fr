@@ -8,7 +8,7 @@
   var passwordInput = document.getElementById("password")
   var operatorSecretInput = document.getElementById("operatorSecret")
 
-  var initialApi = localStorage.getItem(API_KEY) || (window.RUNTIME_CONFIG && window.RUNTIME_CONFIG.API_BASE_URL) || ""
+  var initialApi = localStorage.getItem(API_KEY) || (window.RUNTIME_CONFIG && window.RUNTIME_CONFIG.API_BASE_URL) || "/api"
   apiUrlInput.value = initialApi
 
   function log(value) {
@@ -18,7 +18,7 @@
 
   function getApiBase() {
     var value = (apiUrlInput.value || "").trim()
-    if (!value) return ""
+    if (!value) return "/api"
     return value.replace(/\/+$/, "")
   }
 
@@ -121,4 +121,3 @@
     }
   })
 })()
-
