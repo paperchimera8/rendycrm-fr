@@ -9,6 +9,11 @@ server {
     return 200 '{"status":"ok"}';
   }
 
+  location /debug-backend {
+    default_type text/plain;
+    return 200 "BACKEND_URL is ${BACKEND_URL}";
+  }
+
   location /api/ {
     proxy_http_version 1.1;
     proxy_set_header Host $proxy_host;
